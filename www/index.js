@@ -1,15 +1,64 @@
+let ruleCount = 0;
 
-function checkSymptom() {
-    let input = document.getElementById("userInput").value.toLowerCase();
-    let result = document.getElementById("result");
+// Page load hone pe saved rules load karo
+window.onload = function () {
+    let savedRules = JSON.parse(localStorage.getItem("rules")) || [];
+    savedRules.forEach(rule => {
+        addRuleToList(rule);
+    });
+    ruleCount = savedRules.length;
+};
 
-    if (input.includes("fever")) {
-        result.innerText = "Aapko bukhar ho sakta hai. Paani zyada piyo.";
-    } 
-    else if (input.includes("headache")) {
-        result.innerText = "Headache ho sakta hai. Rest lo.";
-    } 
-    else {
-        result.innerText = "Symptom samajh nahi aaya.";
+// Rule add function
+function addRule() {
+    let input = document.getElementById("ruleInput");
+    let value = input.value.trim();
+
+    if (value === "") {
+        alert("Rule likho pehle!");
+        return;
     }
+
+    ruleCount++;
+    let ruleText = "Rule " + ruleCount + ": " + value;
+
+    addRuleToList(ruleText);
+    saveRule(ruleText);
+
+    input.value = "";
+}
+
+// List me add karna
+function addRuleToList(text) {
+    let list = document.getElementById("ruleList");
+
+    let li = document.createElement("li");
+    li.innerText = text;
+
+    // Delete button
+    let btn = document.createElement("button");
+    btn.innerText = "❌";
+    btn.style.float = "right";
+
+    btn.onclick = function () {
+        li.remove();
+        deleteRule(text);
+    };
+
+    li.appendChild(btn);
+    list.appendChild(li);
+}
+
+// Save to localStorage
+function saveRule(rule) {
+    let rules = JSON.parse(localStorage.getItem("rules")) || [];
+    rules.push(rule);
+    localStorage.setItem("rules", JSON.stringify(rules));
+}
+
+// Delete from localStorage
+function deleteRule(rule) {
+    let rules = JSON.parse(localStorage.getItem("rules")) || [];
+    rules = rules.filter(r => r !== rule);
+    localStorage.setItem("rules", JSON.stringify(rules));
 }
