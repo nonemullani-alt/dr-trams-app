@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dr TRAMS Mini</title>
-  <link rel="stylesheet" href="index.css">
-
+    <title>Rule Notepad</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-    <h1>Dr TRAMS 🩺</h1>
+    <h1>📒 Rule Notepad</h1>
 
-    <input type="text" id="userInput" placeholder="Apna symptom likho">
-    
-    <button onclick="checkSymptom()">Check</button>
+    <!-- Input Section -->
+    <div>
+        <input type="text" id="ruleInput" placeholder="Apna rule likho...">
+        <button onclick="addRule()">Add Rule</button>
+    </div>
 
-    <p id="result"></p>
+    <!-- Rule List -->
+    <div>
+        <h2>Your Rules:</h2>
+        <ul id="ruleList">
+            <!-- Rules yahan add honge -->
+        </ul>
+    </div>
 
- <script src="index.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
 </html>
