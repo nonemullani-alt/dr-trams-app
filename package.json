@@ -13,14 +13,19 @@
   "author": "Apache Cordova Team",
   "license": "Apache-2.0",
   "devDependencies": {
+<<<<<<< HEAD
     "cordova-android": "^15.0.0",
     "cordova-plugin-background-mode": "^0.7.3",
     "cordova-plugin-device": "^3.0.0",
     "cordova-plugin-local-notification": "^1.2.3"
+=======
+    "cordova-android": "^15.0.0"
+>>>>>>> 909930f7e57ab71070a9e0ff84afbd6f2e18aa63
   },
   "cordova": {
     "platforms": [
       "android"
+<<<<<<< HEAD
     ],
     "plugins": {
       "cordova-plugin-local-notification": {
@@ -29,6 +34,9 @@
       "cordova-plugin-background-mode": {},
       "cordova-plugin-device": {}
     }
+=======
+    ]
+>>>>>>> 909930f7e57ab71070a9e0ff84afbd6f2e18aa63
   },
   "dependencies": {
     "abbrev": "^4.0.0",
