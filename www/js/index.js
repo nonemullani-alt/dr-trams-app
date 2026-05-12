@@ -1,14 +1,11 @@
-function checkSymptom() {
-    let input = document.getElementById("userInput").value.toLowerCase();
-    let result = document.getElementById("result");
-
-    if (input.includes("fever")) {
-        result.innerText = "Aapko bukhar ho sakta hai. Paani zyada piyo.";
-    } 
-    else if (input.includes("headache")) {
-        result.innerText = "Headache ho sakta hai. Rest lo.";
-    } 
-    else {
-        result.innerText = "Symptom samajh nahi aaya.";
-    }
+function testNotification() {
+  if (cordova && cordova.plugins && cordova.plugins.notification) {
+    cordova.plugins.notification.local.schedule({
+      title: "Dr Trams",
+      text: "Notification is working!",
+      foreground: true
+    });
+  } else {
+    alert("❌ Notification plugin not found");
+  }
 }
