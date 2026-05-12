@@ -1,0 +1,23 @@
+body {
+    background: #0b1f1a;
+    color: white;
+    text-align: center;
+    font-family: Arial;
+}
+
+input {
+    padding: 10px;
+    width: 80%;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background: green;
+    color: white;
+    border: none;
+}
+
+p {
+    margin-top: 20px;
+}
