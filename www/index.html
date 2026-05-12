@@ -3,26 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Dr Trams Test App</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
 <body>
   <div class="container">
-    <h1>🔥 Dr Trams Hybrid Test</h1>
+    <h1>🔥 Dr Trams Hybrid App</h1>
 
-    <p id="info">Loading device info...</p>
+    <p id="status">Waiting for device...</p>
 
-    <button onclick="showDeviceInfo()">📱 Device Info</button>
-    <button onclick="showAlert()">⚡ Test JS</button>
-    <button onclick="testNotification()">🔔 Notification Test</button>
+    <button onclick="showDevice()">📱 Device Info</button>
+    <button onclick="testJS()">⚡ Test JS</button>
+    <button onclick="testNotification()">🔔 Notification</button>
   </div>
 
-  <script src="js/app.js"></script>
+  <!-- JS FILES -->
+  <script src="js/index.js"></script>
 
-  <!-- Cordova / Capacitor auto inject -->
+  <!-- Cordova / Capacitor Bridge -->
   <script>
     document.addEventListener("deviceready", function () {
-      document.getElementById("info").innerText = "✅ Native Bridge Connected!";
+      document.getElementById("status").innerText = "✅ Native Bridge Connected";
     }, false);
   </script>
 </body>
